@@ -31,7 +31,7 @@ class HomeScreenWidget extends StatelessWidget {
                 ],
               ),
             ),
-            height: 220,
+            height: 210,
             width: 170,
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 120, 216, 125),
@@ -42,7 +42,7 @@ class HomeScreenWidget extends StatelessWidget {
             ),
           ),
           Text(title),
-          Text("${price}")
+          Text("\$${price}")
         ],
       ),
 

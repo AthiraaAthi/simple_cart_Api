@@ -71,6 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     .loginApi(
                         username: emailcontroller.text,
                         password: passcontroller.text);
+                //the token  will print automatically
                 // Obtain shared preferences.
                 final SharedPreferences prefs =
                     await SharedPreferences.getInstance();
@@ -79,6 +80,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 await prefs.getString("token");
                 print(
                     "Successfully Stored Tokens are:  ${await prefs.getString("token")}");
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ));
                 // await prefs.getString('pass');
                 // final String RegName = prefs.getString('email').toString();
                 // final String passName = prefs.getString('pass').toString();
