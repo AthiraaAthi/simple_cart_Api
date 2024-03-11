@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_api_try/controller/my_controller.dart';
-import 'package:new_api_try/view/home_screen.dart';
+import 'package:new_api_try/view/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: SplashScreen(),
       ),
     );
   }

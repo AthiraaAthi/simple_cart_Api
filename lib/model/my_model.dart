@@ -1,70 +1,58 @@
 class SampleApi {
-  String? status;
-  int? totalResults;
-  List<Article>? articles;
+  List<Product>? products;
 
   SampleApi({
-    this.status,
-    this.totalResults,
-    this.articles,
+    this.products,
   });
 
   factory SampleApi.fromJson(Map<String, dynamic> json) => SampleApi(
-        status: json["status"],
-        totalResults: json["totalResults"],
-        articles: json["articles"] == null
+        products: json["products"] == null
             ? []
-            : List<Article>.from(
-                json["articles"]!.map((x) => Article.fromJson(x))),
+            : List<Product>.from(
+                json["products"]!.map((x) => Product.fromJson(x))),
       );
 }
 
-class Article {
-  Source? source;
-  String? author;
+class Product {
+  int? id;
   String? title;
   String? description;
-  String? url;
-  String? urlToImage;
-  DateTime? publishedAt;
-  String? content;
+  int? price;
+  double? discountPercentage;
+  double? rating;
+  int? stock;
+  String? brand;
+  String? category;
+  String? thumbnail;
+  List<String>? images;
 
-  Article({
-    this.source,
-    this.author,
+  Product({
+    this.id,
     this.title,
     this.description,
-    this.url,
-    this.urlToImage,
-    this.publishedAt,
-    this.content,
+    this.price,
+    this.discountPercentage,
+    this.rating,
+    this.stock,
+    this.brand,
+    this.category,
+    this.thumbnail,
+    this.images,
   });
 
-  factory Article.fromJson(Map<String, dynamic> json) => Article(
-        source: json["source"] == null ? null : Source.fromJson(json["source"]),
-        author: json["author"],
+  factory Product.fromJson(Map<String, dynamic> json) => Product(
+        id: json["id"],
         title: json["title"],
         description: json["description"],
-        url: json["url"],
-        urlToImage: json["urlToImage"],
-        publishedAt: json["publishedAt"] == null
-            ? null
-            : DateTime.parse(json["publishedAt"]),
-        content: json["content"],
-      );
-}
-
-class Source {
-  String? id;
-  String? name;
-
-  Source({
-    this.id,
-    this.name,
-  });
-
-  factory Source.fromJson(Map<String, dynamic> json) => Source(
-        id: json["id"],
-        name: json["name"],
+        price: json["price"],
+        discountPercentage: json["discountPercentage"]?.toDouble(),
+        rating: json["rating"]?.toDouble(),
+        stock: json["stock"],
+        brand: json["brand"],
+        category: json["category"],
+        thumbnail: json["thumbnail"],
+        images: json["images"] == null
+            ? []
+            : List<String>.from(json["images"]!.map((x) => x)),
       );
 }
