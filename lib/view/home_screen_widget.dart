@@ -31,7 +31,7 @@ class HomeScreenWidget extends StatelessWidget {
                 ],
               ),
             ),
-            height: 210,
+            height: 200,
             width: 170,
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 120, 216, 125),
